@@ -9,7 +9,7 @@ import ReactMarkdown from 'react-markdown'
 import MarkdownNavbar from 'markdown-navbar'
 import { ClockCircleOutlined, CommentOutlined } from '@ant-design/icons'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { coy } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { formatUtcString } from '@/utils/format'
 import { DetailWrapper, DetailLeft, DetailRight } from './style'
 import PandaIcon from './panda'
@@ -21,7 +21,7 @@ export default memo(function Detail() {
       const match = /language-(\w+)/.exec(className || '')
       return !inline && match ? (
         <SyntaxHighlighter
-          style={coy}
+          style={a11yDark}
           language={match[1]}
           PreTag="div"
           children={String(children).replace(/\n$/, '')}
