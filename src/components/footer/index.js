@@ -8,7 +8,7 @@ export default memo(function Footer() {
       <p className="copy">&copy; yogln.top 版权所有 Blog由React,nodejs驱动.</p>
       <p className="beian">
         <a href="http://www.beian.miit.gov.cn" className="beian">
-          20210101
+          蜀ICP备2021029954号
         </a>
         <img
           src={require('@/assets/img/beianicon.png')}

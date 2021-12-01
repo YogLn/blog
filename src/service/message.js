@@ -9,3 +9,11 @@ export function getMessageList (offset = 0, size = 10) {
 		}
 	})
 }
+
+export function publishMessage (data) {
+	return request({
+		url: '/message',
+		method: 'POST',
+		data
+	})
+}

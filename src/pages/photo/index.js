@@ -20,20 +20,20 @@ export default memo(function Photo() {
   const getAutoResponsiveProps = () => {
     return {
       itemMargin: 10,
-      containerWidth: 1200, //容器总宽度
+      containerWidth: 1200,
       itemClassName: 'productListItem',
-      gridWidth: 20, //列宽
-      transitionDuration: '.5' //过度动画时常
+      gridWidth: 20,
+      transitionDuration: '.5'
     }
   }
 
   return (
-    <AutoResponsive {...getAutoResponsiveProps()}>
-      <PhotoWrapper className="wrap-v1">
+    <PhotoWrapper className="wrap-v1">
+      <AutoResponsive {...getAutoResponsiveProps()}>
         {photoList.map(item => {
-          return <PhotoImg info={item} key={item.id} />
+          return <PhotoImg style={{ width: 300, height: 400 }} info={item} key={item.id} />
         })}
-      </PhotoWrapper>
-    </AutoResponsive>
+      </AutoResponsive>
+    </PhotoWrapper>
   )
 })

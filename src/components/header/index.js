@@ -25,6 +25,7 @@ export default memo(function Header() {
       )
     }
   }
+
   return (
     <HeaderWrapper>
       <div className="content wrap-v1">

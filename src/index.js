@@ -11,5 +11,5 @@ new CanvasNest(root, {
   color: '0,0,255',
   opacity: 0.7,
   zIndex: -2,
-  count: 150
+  count: 200
 })

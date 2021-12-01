@@ -8,5 +8,11 @@ export const FooterWrapper = styled.div`
 	color: #999;
 	.beian {
 		color: #999;
+
+		.image {
+			width: 15px;
+			height: 15px;
+			margin-left: 5px;
+		}
 	}
 `
