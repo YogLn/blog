@@ -8,6 +8,9 @@ import {
   AimOutlined
 } from '@ant-design/icons'
 
+import qq from '@/assets/img/qq.jpg';
+import weixin from '@/assets/img/weixin.jpg';
+import github from '@/assets/img/github.jpg';
 import { AboutWrapper } from './style'
 export default memo(function About() {
   const { userInfo } = useSelector(
@@ -40,12 +43,15 @@ export default memo(function About() {
         <div className="tag">
           <div className="qq">
             <QqOutlined />
+            <img src={qq} alt="" />
           </div>
           <div className="github">
             <GithubOutlined />
+            <img src={github} alt="" />
           </div>
           <div className="wechat">
             <WechatOutlined />
+            <img src={weixin} alt="" />
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ export const AboutWrapper = styled.div`
       /* box-shadow: 2px 2px 5px #00A4FF; */
       box-shadow: 10px 10px 5px #888, 10px 10px 5px #888 inset;
       &:hover {
-        animation: avatar-rotate .6s linear alternate;
+        animation: avatar-rotate 0.6s linear alternate;
       }
     }
   }
@@ -66,15 +66,57 @@ export const AboutWrapper = styled.div`
       .qq {
         color: #00a4ff;
         cursor: pointer;
+        position: relative;
+        &:hover {
+          & img {
+            opacity: 1;
+          }
+        }
+        img {
+          transform: translate(-50%, -100%);
+          left: 50%;
+          opacity: 0;
+          position: absolute;
+          width: 100px;
+          height: 100px;
+        }
       }
       .github {
         margin: 0 30px;
         color: #000;
         cursor: pointer;
+        position: relative;
+        &:hover {
+          & img {
+            opacity: 1;
+          }
+        }
+        img {
+          transform: translate(-50%, -100%);
+          left: 50%;
+          opacity: 0;
+          position: absolute;
+          width: 100px;
+          height: 100px;
+        }
       }
       .wechat {
         color: #4be97a;
         cursor: pointer;
+        position: relative;
+        &:hover {
+          & img {
+            opacity: 1;
+          }
+        }
+        img {
+          transform: translate(-50%, -100%);
+          left: 50%;
+          opacity: 0;
+          position: absolute;
+          width: 100px;
+          height: 100px;
+        }
       }
     }
   }
