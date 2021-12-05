@@ -5,7 +5,6 @@ export const HeaderWrapper = styled.div`
   height: 50px;
   background-color: #404d5a;
   box-shadow: 0 2px 6px #c739cc;
-  /* background-color: #283646; */
   line-height: 50px;
 
   .content {

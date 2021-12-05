@@ -1,7 +1,7 @@
 import * as actionTypes from './constants'
-import { getArticleList } from '@/service/article'
+import { getArticleList, getArticleListByName } from '@/service/article'
 import { getUserInfo } from '@/service/user'
-import { getLabelList } from '@/service/labels'
+import { getLabelList, getArticleListByLabel } from '@/service/labels'
 
 const changeArticleListAction = articleList => ({
   type: actionTypes.CHANGE_ARTICLE_LIST,
@@ -23,7 +23,7 @@ const changeUserInfoAction = userInfo => ({
   userInfo
 })
 
-export const getArticleListAction = (offset, size = 0) => {
+export const getArticleListAction = (offset, size = 5) => {
   return dispatch => {
     getArticleList(offset, size).then(res => {
       dispatch(changeArticleListAction(res))
@@ -33,17 +33,39 @@ export const getArticleListAction = (offset, size = 0) => {
 }
 
 export const getLabelListAction = (offset, size = 0) => {
-  return dispatch => {
+  return (dispatch, getState) => {
     getLabelList().then(res => {
-      dispatch(changeLabelListAction(res))
+      setTimeout(() => {
+        const total = getState().getIn(['article', 'total'])
+        res.unshift({ labelName: 'All', color: '#e62ee6', total })
+        dispatch(changeLabelListAction(res))
+      }, 100)
     })
   }
 }
 
-export const getUserInfoAction = (id) => {
+export const getUserInfoAction = id => {
   return dispatch => {
     getUserInfo(id).then(res => {
       dispatch(changeUserInfoAction(res[0]))
+    })
+  }
+}
+
+export const getArticleListActionByName = data => {
+  return dispatch => {
+    getArticleListByName(data).then(res => {
+      dispatch(changeArticleListAction(res))
+    })
+  }
+}
+
+export const getArticleListByLabelNameAction = name => {
+  return (dispatch, getState) => {
+    getArticleListByLabel(name).then(res => {
+      const total = res.length
+      dispatch(changeTotalAction(total))
+      dispatch(changeArticleListAction(res))
     })
   }
 }

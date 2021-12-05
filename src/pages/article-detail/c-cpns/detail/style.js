@@ -65,6 +65,13 @@ export const DetailLeft = styled.div`
     justify-content: flex-end;
     color: #ddd;
   }
+  .parting-line {
+    height: 4px;
+    border: 0px;
+    background-color: rgb(221, 221, 221);
+    margin: 20px 0px;
+    background-image: repeating-linear-gradient(-45deg, rgb(255, 255, 255), rgb(255, 255, 255) 4px, transparent 0px, transparent 8px);
+  }
 `
 export const DetailRight = styled.div`
   border: 1px solid #ddd;

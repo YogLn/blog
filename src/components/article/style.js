@@ -46,6 +46,9 @@ export const ArticleRight = styled.div`
     color: #666;
     margin: 5px;
     font-size: 14px;
+    width: 380px;
+    text-align: center;
+    margin: 0 auto;
   }
   .info {
     display: flex;

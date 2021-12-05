@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 
-import { getArticleDetailAction } from './store/actionCreators';
+import { getArticleDetailAction, getCommentListAction } from './store/actionCreators';
 import Detail from './c-cpns/detail';
 import { ArticleDetailWrapper } from './style';
 
@@ -11,10 +11,11 @@ export default memo(function ArticleDetail(props) {
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(getArticleDetailAction(id))
+		dispatch(getCommentListAction(id))
 	}, [dispatch, id])
 	return (
 		<ArticleDetailWrapper className="wrap-v1">
-			<Detail />
+			<Detail articleId={id}/>
 		</ArticleDetailWrapper>
 	)
 })

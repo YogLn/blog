@@ -1,6 +1,6 @@
 import request from './request'
 
-export function getArticleList(offset = 0, size = 10) {
+export function getArticleList(offset = 0, size = 5) {
 	return request({
 		url: '/article',
 		params: {
@@ -19,5 +19,13 @@ export function getArticleDetail(id) {
 export function getCommentListById(id) {
 	return request({
 		url: `comment/${id}`
+	})
+}
+
+export function getArticleListByName(data) {
+	return request({
+		url: '/article/search',
+		method: 'POST',
+		data
 	})
 }

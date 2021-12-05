@@ -6,12 +6,11 @@ import { getColor } from '@/utils/color.js';
 import { InfoWrapper, TagWrapper } from './style'
 
 export default memo(function Info(props) {
-  const { labelList, title } = props
+  const { labelList, title, getArticleListByLabel } = props
   
   return (
     <InfoWrapper>
       <div className="header">
-        
         <h3 className="title"><SmileTwoTone />{title}</h3>
         <a href="#/">more</a>
       </div>
@@ -19,7 +18,7 @@ export default memo(function Info(props) {
       <div className="tag-list">
         {labelList.map(item => {
           const color = getColor()
-          return <TagWrapper key={item.labelId} color={color}>
+          return <TagWrapper key={item.labelName} color={color} onClick={e => getArticleListByLabel(item)}>
 						<Tag color={item.color} className="tag">{item.labelName}</Tag>
 						<span className="num">{item.total}</span>
 					</TagWrapper>

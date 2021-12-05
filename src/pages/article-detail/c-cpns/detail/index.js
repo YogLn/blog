@@ -3,7 +3,6 @@ import { useSelector, shallowEqual } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import gfm from 'remark-gfm'
-import 'markdown-navbar/dist/navbar.css'
 import { Divider, Anchor } from 'antd'
 import ReactMarkdown from 'react-markdown'
 import MarkdownNavbar from 'markdown-navbar'
@@ -13,8 +12,11 @@ import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { formatUtcString } from '@/utils/format'
 import { DetailWrapper, DetailLeft, DetailRight } from './style'
 import PandaIcon from './panda'
+import Comment from '../comment';
+import 'markdown-navbar/dist/navbar.css'
 
-export default memo(function Detail() {
+export default memo(function Detail(props) {
+  const { articleId } = props
   const history = useHistory()
   const components = {
     code({ node, inline, className, children, ...props }) {
@@ -32,20 +34,12 @@ export default memo(function Detail() {
       )
     }
   }
-
   const { articleDetail } = useSelector(
     state => ({
       articleDetail: state.getIn(['detail', 'articleDetail'])
     }),
     shallowEqual
   )
-
-  const onHashChange = (newHash, oldHash) => {
-    console.log(newHash, oldHash)
-    // window.location.hash.replace('#',oldHash)
-    // console.log(window.location.hash)
-    // window.location.hash.replace(`#/${oldHash}`)
-  }
 
   const backArticleList = () => {
     history.push('/article')
@@ -68,7 +62,7 @@ export default memo(function Detail() {
           </span>
           <span>
             <CommentOutlined />
-            {30}
+            {articleDetail.commmentNum}
           </span>
         </div>
         <div className="image">
@@ -88,6 +82,8 @@ export default memo(function Detail() {
           <PandaIcon style={{ fontSize: '32px', marginRight: '8px' }} />
           <span>本文最后更新于:{formatUtcString(articleDetail.updateAt)}</span>
         </div>
+        <div className="parting-line"></div>
+        <Comment articleId={articleId}/>
       </DetailLeft>
       <DetailRight>
         <Anchor>
@@ -98,7 +94,6 @@ export default memo(function Detail() {
             headingTopOffset={80}
             ordered={false}
             updateHashAuto={false}
-            onHashChange={(newHash, oldHash) => onHashChange(newHash, oldHash)}
           />
         </Anchor>
       </DetailRight>

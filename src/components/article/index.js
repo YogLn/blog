@@ -36,11 +36,11 @@ export default memo(function Article(props) {
           </div>
           <div className="comment">
             <CommentOutlined />
-            {20}
+            {info.commentNum}
           </div>
           <div className="browser">
             <EyeOutlined />
-            {20}
+            {info.viewTimes}
           </div>
         </div>
         <div className="label">

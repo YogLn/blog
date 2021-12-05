@@ -19,9 +19,9 @@ export default memo(function About() {
   return (
     <AboutWrapper>
       <div className="avatar">
-        <img src={userInfo.avatar_url} alt="" />
+        <img src={userInfo?.avatar_url} alt="" />
       </div>
-      <h3 className="name">{userInfo.name}</h3>
+      <h3 className="name">{userInfo?.name}</h3>
       <div className="info">
         <p className="address">
           <AimOutlined />
