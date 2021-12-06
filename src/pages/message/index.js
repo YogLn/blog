@@ -45,8 +45,8 @@ export default memo(function Message() {
   return (
     <MessageWrapper className="wrap-v2">
       <div className="message-list">
-        {messageList.map(item => {
-          return <MessageTheme info={item} key={item.id} />
+        {messageList.map((item, index) => {
+          return <MessageTheme info={item} key={item.id}/>
         })}
       </div>
       <div className="leave-message">

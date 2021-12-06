@@ -12,6 +12,7 @@ export const ArticleWrapper = styled.div`
   &:hover {
     box-shadow: 2px 2px 5px #999;
   }
+
 `
 export const ArticleLeft = styled.div`
   width: 410px;
@@ -82,4 +83,6 @@ export const ArticleRight = styled.div`
     margin: 10px 10px;
     padding: 4px 8px;
   }
+
+  
 `

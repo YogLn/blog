@@ -6,6 +6,7 @@ export default memo(function MessageTheme(props) {
   const { info } = props
   const { user } = props.info
   const defaultAvatarUrl = 'https://cdn.learnku.com/uploads/images/201710/30/1/TrJS40Ey5k.png'
+
   return (
     <MessageWrapper>
       <div className="left">

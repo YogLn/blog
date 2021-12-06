@@ -4,6 +4,9 @@ export const PhotoWrapper = styled.div`
   border: 2px solid hsla(0, 0%, 0%, 0.5);
   position: relative;
   padding: 2px;
+
+  transition: all 0.8s;
+  animation: photo-show 0.8s linear;
   &:hover {
     opacity: 0.9;
     filter: alpha(opacity=60);
@@ -48,4 +51,16 @@ export const PhotoWrapper = styled.div`
       }
     }
   }
+
+  @keyframes photo-show {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
 `
