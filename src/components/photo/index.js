@@ -9,10 +9,10 @@ export default memo(function Photo(props) {
     <PhotoWrapper>
       <img src={info?.imgUrl} alt="" />
       <div className="info">
-        <p>
+        <div>
           {info?.description}
           <span>{formatUtcString(info?.createAt)}</span>
-        </p>
+        </div>
       </div>
     </PhotoWrapper>
   )

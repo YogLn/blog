@@ -18,12 +18,10 @@ export default memo(function Photo() {
   }, [dispatch])
 
   return (
-    <PhotoWrapper>
-      <div className="content">
-        {photoList.map(item => {
-          return <PhotoImg info={item} key={item.id} />
-        })}
-      </div>
+    <PhotoWrapper className="wrap-v1">
+      {photoList.map(item => {
+        return <PhotoImg info={item} key={item.id} />
+      })}
     </PhotoWrapper>
   )
 })

@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const MessageWrapper = styled.div`
-	.message-list {
-
-	}
+	width: 80%;
 	.leave-message {
 		margin-top: 40px;
+		width: 100%;
 	}
 `

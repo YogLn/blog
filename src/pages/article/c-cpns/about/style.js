@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const AboutWrapper = styled.div`
+  width: 100%;
   border: 1px solid #ccc;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -21,11 +23,14 @@ export const AboutWrapper = styled.div`
   .name {
     margin: 10px 0 20px;
     font-size: 20px;
+    font-weight: 700;
   }
   .info {
+    width: 100%;
     text-align: center;
     color: #999;
     font-size: 16px;
+
     .address {
       span {
         padding: 0 3px;
@@ -34,28 +39,29 @@ export const AboutWrapper = styled.div`
   }
   .concat {
     margin-top: 20px;
-    h3 {
+    .social-contact {
       font-size: 20px;
+      font-weight: 700;
       color: #666;
       position: relative;
       text-align: center;
     }
-    h3::before {
+    .social-contact::before {
       content: '';
       border-top: 1px solid #ccc;
       display: block;
       position: absolute;
-      width: 100px;
+      width: 50%;
       top: 50%;
       left: 120px;
     }
 
-    h3::after {
+    .social-contact::after {
       content: '';
       border-top: 1px solid #ccc;
       display: block;
       position: absolute;
-      width: 100px;
+      width: 50%;
       top: 50%;
       right: 120px;
     }
@@ -69,13 +75,13 @@ export const AboutWrapper = styled.div`
         position: relative;
         &:hover {
           & img {
-            opacity: 1;
+            visibility: visible;
           }
         }
         img {
           transform: translate(-50%, -100%);
           left: 50%;
-          opacity: 0;
+          visibility: hidden;
           position: absolute;
           width: 100px;
           height: 100px;
@@ -88,13 +94,13 @@ export const AboutWrapper = styled.div`
         position: relative;
         &:hover {
           & img {
-            opacity: 1;
+            visibility: visible;
           }
         }
         img {
           transform: translate(-50%, -100%);
           left: 50%;
-          opacity: 0;
+          visibility: hidden;
           position: absolute;
           width: 100px;
           height: 100px;
@@ -106,13 +112,13 @@ export const AboutWrapper = styled.div`
         position: relative;
         &:hover {
           & img {
-            opacity: 1;
+            visibility: visible;
           }
         }
         img {
           transform: translate(-50%, -100%);
           left: 50%;
-          opacity: 0;
+          visibility: hidden;
           position: absolute;
           width: 100px;
           height: 100px;

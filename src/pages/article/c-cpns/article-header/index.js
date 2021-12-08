@@ -9,7 +9,7 @@ export default memo(function ArticleHeader() {
 	}), shallowEqual)
   return (
     <HeaderWrapper>
-      <h3>文章列表</h3>
+      <div>文章列表</div>
       <div className="right">
         <div>共</div>
         <div className="total">{total}</div>

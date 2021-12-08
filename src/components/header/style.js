@@ -6,11 +6,22 @@ export const HeaderWrapper = styled.div`
   background-color: #404d5a;
   box-shadow: 0 2px 6px #c739cc;
   line-height: 50px;
-
+  position: relative;
+  width: 100%;
   .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 80%;
+  }
+
+  @media screen and (max-width: 850px) {
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
   }
 `
 
@@ -44,6 +55,10 @@ export const HeaderLeft = styled.div`
     left: 60px;
     color: #999;
     cursor: default;
+
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
   }
 
   @keyframes logo-scale {
@@ -91,6 +106,22 @@ export const HeaderRight = styled.div`
         color: #fff;
         text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7);
       }
+    }
+  }
+
+  .menu {
+    display: none;
+  }
+
+  @media screen and (max-width: 850px) {
+    .select-list {
+      display: none;
+    }
+    .menu {
+      display: block;
+      font-size: 24px;
+      margin-right: 15px;
+      cursor: pointer;
     }
   }
 `

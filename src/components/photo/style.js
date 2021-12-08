@@ -26,7 +26,7 @@ export const PhotoWrapper = styled.div`
     right: 0;
     bottom: 0;
 
-    p {
+    div {
       opacity: 0;
       display: block;
       width: 100%;

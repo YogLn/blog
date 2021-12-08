@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const LoginBoxWrapper = styled.div`
-	.button {
-		position: relative;
-		left: 20%;
-	}
+  width: 100%;
+  .button {
+    position: relative;
+    left: 20%;
+  }
 `

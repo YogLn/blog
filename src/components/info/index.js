@@ -11,7 +11,7 @@ export default memo(function Info(props) {
   return (
     <InfoWrapper>
       <div className="header">
-        <h3 className="title"><SmileTwoTone />{title}</h3>
+        <div className="title"><SmileTwoTone />{title}</div>
         <a href="#/">more</a>
       </div>
       

@@ -27,7 +27,7 @@ export default memo(function Article(props) {
         </div>
       </ArticleLeft>
       <ArticleRight>
-        <h3 className="title">{info.title}</h3>
+        <div className="title">{info.title}</div>
         <div className="desc">{info.description}</div>
         <div className="info">
           <div className="time">

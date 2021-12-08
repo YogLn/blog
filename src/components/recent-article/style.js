@@ -42,6 +42,9 @@ export const RecentWrapper = styled.div`
 
 			.right {
 				color: #b734eb;
+				@media screen and (max-width: 500px) {
+					display: none;
+				}
 			}
 		}
 	}

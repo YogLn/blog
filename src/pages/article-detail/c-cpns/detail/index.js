@@ -54,7 +54,7 @@ export default memo(function Detail(props) {
           </div>
           <span>/{articleDetail.title}</span>
         </div>
-        <h1 className="title">{articleDetail.title}</h1>
+        <div className="title">{articleDetail.title}</div>
         <div className="info">
           <span>
             <ClockCircleOutlined />
@@ -69,7 +69,7 @@ export default memo(function Detail(props) {
           <img src={articleDetail.titleImg} alt="" />
         </div>
         <Divider style={{ color: '#2782e3', fontSize: '18px' }}>描述</Divider>
-        <p className="description">{articleDetail.description}</p>
+        <div className="description">{articleDetail.description}</div>
         <Divider style={{ color: '#2782e3', fontSize: '18px' }}>正文</Divider>
         <ReactMarkdown
           className="content"

@@ -24,22 +24,22 @@ export default memo(function About() {
       <div className="avatar">
         <img src={userInfo?.avatar_url} alt="" />
       </div>
-      <h3 className="name">{userInfo?.name}</h3>
+      <div className="name">{userInfo?.name}</div>
       <div className="info">
-        <p className="address">
+        <div className="address">
           <AimOutlined />
           <span>四川·成都</span>
-        </p>
-        <p className="front">前端:React + Redux + Antd</p>
-        <p className="admin">后台:Vue3 + Vite + ElementPlus</p>
-        <p className="back">后端: Node + Koa + MySql</p>
-        <p className="email">
+        </div>
+        <div className="front">前端:React + Redux + Antd</div>
+        <div className="admin">后台:Vue3 + Vite + ElementPlus</div>
+        <div className="back">后端: Node + Koa + MySql</div>
+        <div className="email">
           <MailOutlined />
           <span>15508067205@163.com</span>
-        </p>
+        </div>
       </div>
       <div className="concat">
-        <h3>社交账号</h3>
+        <div className="social-contact">社交账号</div>
         <div className="tag">
           <div className="qq">
             <QqOutlined />

@@ -30,6 +30,7 @@ export default memo(function MyPagination(props) {
 				pageSizeOptions={['5', '10', '15', '20']}
 				onChange={pageChange}
         onShowSizeChange={onShowSizeChange}
+				className="pagination"
       />
     </PaginationWrapper>
   )

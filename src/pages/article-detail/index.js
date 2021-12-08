@@ -14,7 +14,7 @@ export default memo(function ArticleDetail(props) {
 		dispatch(getCommentListAction(id))
 	}, [dispatch, id])
 	return (
-		<ArticleDetailWrapper className="wrap-v1">
+		<ArticleDetailWrapper>
 			<Detail articleId={id}/>
 		</ArticleDetailWrapper>
 	)

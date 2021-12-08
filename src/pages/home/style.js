@@ -1,10 +1,16 @@
 import styled from 'styled-components'
-import background from '@/assets/img/background.jpg';
+import background from '@/assets/img/background.jpg'
 
 export const HomeWrapper = styled.div`
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 50px;
+  right: 0;
+  bottom: 0;
   .container {
     width: 100%;
-    min-height: calc(100vh - 120px);
+    height: 100%;
     position: relative;
     background-image: url(${background});
     background-position: center;
@@ -26,14 +32,13 @@ export const HomeWrapper = styled.div`
 
       .water {
         height: 100%;
-        width: 200%;
         position: absolute;
         right: 0;
         animation: water-move 10s linear infinite;
       }
 
       .boat {
-        width: 350px;
+        width: 20%;
         position: absolute;
         bottom: 200px;
         left: 50%;
@@ -53,9 +58,19 @@ export const HomeWrapper = styled.div`
     0% {
       transform: translateX(0);
     }
-
     100% {
       transform: translateX(1000px);
+    }
+  }
+  @keyframes water-move-m {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(300px);
+    }
+    100% {
+      transform: translateX(500px);
     }
   }
 

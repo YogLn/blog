@@ -25,10 +25,10 @@ export default memo(function RecentArticle(props) {
   return (
     <RecentWrapper>
       <div className="header">
-        <h3 className="title">
+        <div className="title">
           <HeartTwoTone twoToneColor="#eb2f96" />
           <span className="title-name">{title}</span>
-        </h3>
+        </div>
         <a href="#/">more</a>
       </div>
       <div className="list">

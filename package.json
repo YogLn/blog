@@ -12,6 +12,7 @@
     "axios": "^0.24.0",
     "canvas-nest.js": "^2.0.4",
     "classnames": "^2.3.1",
+    "compression-webpack-plugin": "^5.0.1",
     "dayjs": "^1.10.7",
     "immutable": "^4.0.0",
     "markdown-navbar": "^1.4.3",
@@ -54,5 +55,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }

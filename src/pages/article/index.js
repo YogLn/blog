@@ -26,7 +26,7 @@ export default memo(function Article() {
   }, [dispatch])
 
   return (
-    <ArticleWrapper className="wrap-v1">
+    <ArticleWrapper>
       <ArticleLeft>
         <ArticleHeader />
         <ArticleList />

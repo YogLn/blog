@@ -1,14 +1,28 @@
 import styled from 'styled-components'
 
 export const DetailWrapper = styled.div`
+ @media screen and (min-width: 900px) {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+ }
+ @media screen and (max-width: 900px) {
+  width: 100%;
+ }
 `
 export const DetailLeft = styled.div`
   padding: 20px 20px;
   border: 1px solid #ddd;
-  width: 900px;
+  width: 70%;
   background-color: #fff;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  .p {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+  }
   .top {
     width: 100%;
     height: 60px;
@@ -24,7 +38,6 @@ export const DetailLeft = styled.div`
       margin-right: 5px;
       cursor: pointer;
       text-decoration: underline;
-      
     }
   }
   .title {
@@ -32,6 +45,7 @@ export const DetailLeft = styled.div`
     color: #2782e3;
     font-weight: bold;
     margin: 20px 0;
+    font-size: 24px;
   }
   .info {
     display: flex;
@@ -42,24 +56,25 @@ export const DetailLeft = styled.div`
     margin-top: 20px;
     text-align: center;
     img {
-      width: 850px;
+      width: 100%;
       object-fit: contain;
     }
   }
   .description {
     margin-top: 20px;
+    width: 100%;
     color: #666;
     text-align: center;
   }
   .content {
-    font-family:Georgia, Arial;
+    font-family: Georgia, Arial;
     color: #000;
     img {
-      width: 800px;
+      width: 100%;
       object-fit: fill;
     }
   }
-  .update{
+  .update {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -70,7 +85,16 @@ export const DetailLeft = styled.div`
     border: 0px;
     background-color: rgb(221, 221, 221);
     margin: 20px 0px;
-    background-image: repeating-linear-gradient(-45deg, rgb(255, 255, 255), rgb(255, 255, 255) 4px, transparent 0px, transparent 8px);
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgb(255, 255, 255),
+      rgb(255, 255, 255) 4px,
+      transparent 0px,
+      transparent 8px
+    );
+  }
+  @media screen and (max-width: 900px) {
+    width: 100%;
   }
 `
 export const DetailRight = styled.div`
@@ -78,8 +102,12 @@ export const DetailRight = styled.div`
   background-color: #fff;
   color: #000;
   opacity: 0.8;
-  width: 280px;
+  width: 20%;
   .article-menu {
     width: 100%;
+  }
+
+  @media screen and (max-width: 900px) {
+    display: none;
   }
 `

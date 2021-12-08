@@ -4,8 +4,8 @@ import { FooterWrapper } from './style'
 
 export default memo(function Footer() {
   return (
-    <FooterWrapper className="wrap-v2">
-      <p className="copy">&copy; yogln.top 版权所有 Blog由React,nodejs驱动.</p>
+    <FooterWrapper>
+      <p className="copy">Copyright&copy;2021 yogln.top 版权所有</p>
       <p className="beian">
         <a href="http://www.beian.miit.gov.cn" className="beian">
           蜀ICP备2021029954号

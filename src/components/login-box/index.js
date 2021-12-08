@@ -16,17 +16,9 @@ export default memo(function Login(props) {
   return (
     <LoginBoxWrapper>
       <Form
-        name="basic"
-        labelCol={{
-          span: 4
-        }}
-        wrapperCol={{
-          span: 8
-        }}
-        initialValues={{
-          remember: true
-        }}
-        autoComplete="off"
+        className="login-form"
+        labelCol={{ span: 4 }}
+        wrapperCol={{ span: 14 }}
       >
         <Form.Item
           label="用户名"
@@ -34,11 +26,15 @@ export default memo(function Login(props) {
           rules={[
             {
               required: true,
-              message: 'Please input your username!'
+              message: '请输入用户名~'
             }
           ]}
         >
-          <Input value={form.name} name="name" onChange={updateField} />
+          <Input
+            value={form.name}
+            name="name"
+            onChange={updateField}
+          />
         </Form.Item>
         <Form.Item
           label="密&nbsp;&nbsp;码"
@@ -46,7 +42,7 @@ export default memo(function Login(props) {
           rules={[
             {
               required: true,
-              message: 'Please input your password!'
+              message: '请输入密码~'
             }
           ]}
         >
