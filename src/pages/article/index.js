@@ -4,7 +4,8 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import {
   getArticleListAction,
   getLabelListAction,
-  getUserInfoAction
+  getUserInfoAction,
+  getHotListAction
 } from './store/actionCreators'
 
 import ArticleHeader from './c-cpns/article-header'
@@ -29,6 +30,7 @@ export default memo(function Article() {
     dispatch(getArticleListAction(0, 5))
     dispatch(getLabelListAction())
     dispatch(getUserInfoAction(8))
+    dispatch(getHotListAction())
   }, [dispatch])
 
   return (

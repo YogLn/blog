@@ -5,7 +5,8 @@ const initState = Map({
 	articleList: [],
 	total: 0,
 	labelList: [],
-	userInfo: {}
+	userInfo: {},
+	hotList: []
 })
 
 function reducer (state = initState, action) {
@@ -18,7 +19,8 @@ function reducer (state = initState, action) {
 			return state.set('labelList', action.labelList)
 		case actionTypes.CHANGE_USER_INFO:
 			return state.set('userInfo', action.userInfo)
-
+		case actionTypes.CHANGE_HOT_LIST:
+			return state.set('hotList', action.hotList)
 		default:
 			return state
 	}

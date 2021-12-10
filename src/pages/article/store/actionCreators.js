@@ -1,5 +1,5 @@
 import * as actionTypes from './constants'
-import { getArticleList, getArticleListByName } from '@/service/article'
+import { getArticleList, getArticleListByName, getHotArticle } from '@/service/article'
 import { getUserInfo } from '@/service/user'
 import { getLabelList, getArticleListByLabel } from '@/service/labels'
 
@@ -21,6 +21,11 @@ const changeLabelListAction = labelList => ({
 const changeUserInfoAction = userInfo => ({
   type: actionTypes.CHANGE_USER_INFO,
   userInfo
+})
+
+const changeHotListAction = hotList => ({
+  type: actionTypes.CHANGE_HOT_LIST,
+  hotList
 })
 
 export const getArticleListAction = (offset, size = 5) => {
@@ -66,6 +71,14 @@ export const getArticleListByLabelNameAction = name => {
       const total = res.length
       dispatch(changeTotalAction(total))
       dispatch(changeArticleListAction(res))
+    })
+  }
+}
+
+export const getHotListAction = () => {
+  return dispatch => {
+    getHotArticle().then(res => {
+      dispatch(changeHotListAction(res))
     })
   }
 }

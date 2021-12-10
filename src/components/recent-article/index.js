@@ -9,14 +9,13 @@ import { RecentWrapper } from './style'
 export default memo(function RecentArticle(props) {
   const { title } = props
 	const history = useHistory();
-  const { recentArticle } = useSelector(
+  const { hotList } = useSelector(
     state => ({
-      recentArticle: state.getIn(['article', 'articleList'])
+      hotList: state.getIn(['article', 'hotList'])
     }),
     shallowEqual
   )
 
-  const recentList = recentArticle?.slice(0, 5)
   const handleArticleClick = useCallback(item => {
     const { id } = item
 		history.push(`/article/detail/${id}`)
@@ -32,7 +31,7 @@ export default memo(function RecentArticle(props) {
         <a href="#/">more</a>
       </div>
       <div className="list">
-        {recentList.map(item => {
+        {hotList.map(item => {
           return (
             <div
               className="row"

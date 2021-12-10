@@ -24,7 +24,7 @@ export default memo(function RightInfo() {
 	return (
 		<InfoWrapper>
 			<Info labelList={labelList} title="文章标签" getArticleListByLabel={getArticleListByLabel}/>
-			<RecentArticle title="最近文章"/>
+			<RecentArticle title="热门文章"/>
 		</InfoWrapper>
 	)
 })

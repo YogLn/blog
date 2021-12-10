@@ -29,3 +29,9 @@ export function getArticleListByName(data) {
 		data
 	})
 }
+
+export function getHotArticle() {
+	return request({
+		url: '/article/hot'
+	})
+}
