@@ -11,7 +11,7 @@ export default memo(function MyPagination(props) {
 	const dispatch = useDispatch()
 	
 	const onShowSizeChange = useCallback((current, size) => {
-		dispatch(getArticleListAction((current * size - 1),  size))
+		dispatch(getArticleListAction((current),  size))
 		backTop()
 	}, [dispatch])
 

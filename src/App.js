@@ -1,26 +1,30 @@
 import React, { memo, Suspense } from 'react'
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
 
 import routes from './router'
 import store from './store'
+import './utils/clicklove'
 
-import { AppWrapper } from './style'
+import { BackTop } from 'antd'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Loading from '@/pages/loading'
-import { Provider } from 'react-redux'
+import rocket from '@/assets/img/rocket.png'
 
 export default memo(function App() {
-  
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <AppWrapper>
+        <div>
           <Header />
           <Suspense fallback={<Loading />}>{renderRoutes(routes)}</Suspense>
           <Footer />
-        </AppWrapper>
+          <BackTop>
+            <img src={rocket} alt="" style={{width: '60px', height: '60px'}} />
+          </BackTop>
+        </div>
       </BrowserRouter>
     </Provider>
   )

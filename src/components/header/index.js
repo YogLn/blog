@@ -1,10 +1,17 @@
-import React, { memo, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { useDarkreader } from 'react-darkreader'
 import classNames from 'classnames'
 
 import { headerLinks } from '@/common/local-data.js'
+import {
+  getArticleListAction,
+  getLabelListAction,
+  getUserInfoAction
+} from '@/pages/article/store'
 
-import { Drawer } from 'antd'
+import { Drawer, Tooltip } from 'antd'
 import { MenuFoldOutlined } from '@ant-design/icons'
 import RightSearch from '@/pages/article/c-cpns/right-search'
 import RightInfo from '@/pages/article/c-cpns/right-info'
@@ -12,11 +19,22 @@ import About from '@/pages/article/c-cpns/about'
 import { HeaderWrapper, HeaderLeft, HeaderRight } from './style'
 
 export default memo(function Header() {
+  const dispatch = useDispatch()
+  const [, { toggle }] = useDarkreader(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [visible, setVisible] = useState(false)
+
+  // hooks
+  useEffect(() => {
+    dispatch(getArticleListAction(0, 5))
+    dispatch(getLabelListAction())
+    dispatch(getUserInfoAction(8))
+  }, [dispatch])
+
   const showDrawer = () => {
     setVisible(true)
   }
+
   const onClose = () => {
     setVisible(false)
   }
@@ -42,11 +60,13 @@ export default memo(function Header() {
   return (
     <HeaderWrapper>
       <div className="content wrap-v1">
-        <HeaderLeft>
-          <a href="#/" className="logo">
-            <span>YogLn</span>
-          </a>
-          <span className="desc">桃李不言 下自成蹊</span>
+        <HeaderLeft onClick={toggle}>
+          <Tooltip placement="bottom" title="切换主题">
+            <a href="#/" className="logo">
+              <span>YogLn</span>
+            </a>
+            <span className="desc">桃李不言 下自成蹊</span>
+          </Tooltip>
         </HeaderLeft>
         <HeaderRight>
           <div className="select-list">
@@ -75,7 +95,13 @@ export default memo(function Header() {
           onClose={onClose}
           visible={visible}
           width="80%"
-          bodyStyle={{ fontSize: '16px' }}
+          headerStyle={{ backgroundColor: '#FBE8E6' }}
+          bodyStyle={{
+            fontSize: '16px',
+            backgroundImage: `url('https://s2.loli.net/2021/12/04/4ygIYEfKsnBwtUG.png')`,
+            objectFit: 'center',
+            backgroundPositionX: '-80%'
+          }}
         >
           <div className="menu-list">
             {headerLinks.map((item, index) => {
@@ -95,9 +121,9 @@ export default memo(function Header() {
               )
             })}
           </div>
-          <RightSearch />
-          <RightInfo />
-          <About />
+          {visible && <RightSearch />}
+          {visible && <RightInfo />}
+          {visible && <About />}
         </Drawer>
       </div>
     </HeaderWrapper>

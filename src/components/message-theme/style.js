@@ -8,6 +8,7 @@ export const MessageWrapper = styled.div`
   padding-bottom: 5px;
   animation: message-offset 0.6s linear;
   transition: all 0.6s;
+  width: 100%;
   .left {
     width: 80px;
     height: 80px;
@@ -22,6 +23,7 @@ export const MessageWrapper = styled.div`
     }
   }
   .right {
+    width: 100%;
     .info {
       display: flex;
       align-items: center;
@@ -31,7 +33,7 @@ export const MessageWrapper = styled.div`
       .time {
         color: #ccc;
         font-size: 12px;
-				margin-left: 20px;
+        padding-left: 15px;
       }
     }
   }

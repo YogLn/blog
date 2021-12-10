@@ -16,7 +16,7 @@ export default memo(function RecentArticle(props) {
     shallowEqual
   )
 
-  const recentList = recentArticle.slice(0, 5)
+  const recentList = recentArticle?.slice(0, 5)
   const handleArticleClick = useCallback(item => {
     const { id } = item
 		history.push(`/article/detail/${id}`)

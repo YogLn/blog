@@ -11,6 +11,7 @@ export default memo(function Message() {
   const { TextArea } = Input
   const [message, setMessage] = useState('')
   const dispatch = useDispatch()
+  const [size, setSize] = useState(5)
   const { messageList } = useSelector(
     state => ({
       messageList: state.getIn(['message', 'messageList'])
@@ -19,8 +20,8 @@ export default memo(function Message() {
   )
 
   useEffect(() => {
-    dispatch(getMessageListAction(0, 10))
-  }, [dispatch])
+    dispatch(getMessageListAction(0, size))
+  }, [dispatch, size])
 
   const handleLeave = useCallback(async () => {
     try {
@@ -41,6 +42,9 @@ export default memo(function Message() {
       AMessage.info('您还没有登录，快去登录吧~')
     }
   }, [message, dispatch])
+  const loadMore = useCallback(() => {
+    setSize(size+10)
+  }, [setSize, size])
 
   return (
     <MessageWrapper className="wrap-v2">
@@ -49,6 +53,7 @@ export default memo(function Message() {
           return <MessageTheme info={item} key={item.id}/>
         })}
       </div>
+      <div className="more" onClick={e => loadMore()}>加载更多...</div>
       <div className="leave-message">
         <TextArea
           rows={4}
