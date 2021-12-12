@@ -13,9 +13,14 @@ export const HeaderWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 80%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1150px) {
+      width: 100%;
+    }
   }
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 950px) {
     .content {
       display: flex;
       justify-content: space-between;
@@ -56,7 +61,7 @@ export const HeaderLeft = styled.div`
     color: #999;
     cursor: default;
 
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: 950px) {
       display: none;
     }
   }
@@ -113,7 +118,7 @@ export const HeaderRight = styled.div`
     display: none;
   }
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 950px) {
     .select-list {
       display: none;
     }

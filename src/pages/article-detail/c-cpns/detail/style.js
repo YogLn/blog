@@ -67,7 +67,6 @@ export const DetailLeft = styled.div`
     text-align: center;
   }
   .content {
-    font-family: Georgia, Arial;
     color: #000;
     img {
       width: 100%;

@@ -22,7 +22,7 @@ export default memo(function App() {
           <Suspense fallback={<Loading />}>{renderRoutes(routes)}</Suspense>
           <Footer />
           <BackTop>
-            <img src={rocket} alt="" style={{width: '60px', height: '60px'}} />
+            <img src={rocket} alt="" style={{width: '50px', height: '50px'}} />
           </BackTop>
         </div>
       </BrowserRouter>

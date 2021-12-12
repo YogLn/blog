@@ -10,7 +10,6 @@ export const HeaderWrapper = styled.div`
   margin: 0 auto;
 
 	@media screen and (max-width: 900px) {
-		left: 5%;
 		position: relative;
 	}
   .right {

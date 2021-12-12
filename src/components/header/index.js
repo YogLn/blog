@@ -8,12 +8,14 @@ import { headerLinks } from '@/common/local-data.js'
 import {
   getArticleListAction,
   getLabelListAction,
-  getUserInfoAction
+  getUserInfoAction,
+  getHotListAction
 } from '@/pages/article/store'
 
 import { Drawer, Tooltip } from 'antd'
 import { MenuFoldOutlined } from '@ant-design/icons'
 import RightSearch from '@/pages/article/c-cpns/right-search'
+import Music from '@/pages/article/c-cpns/music'
 import RightInfo from '@/pages/article/c-cpns/right-info'
 import About from '@/pages/article/c-cpns/about'
 import { HeaderWrapper, HeaderLeft, HeaderRight } from './style'
@@ -29,6 +31,7 @@ export default memo(function Header() {
     dispatch(getArticleListAction(0, 5))
     dispatch(getLabelListAction())
     dispatch(getUserInfoAction(8))
+    dispatch(getHotListAction())
   }, [dispatch])
 
   const showDrawer = () => {
@@ -59,7 +62,7 @@ export default memo(function Header() {
 
   return (
     <HeaderWrapper>
-      <div className="content wrap-v1">
+      <div className="content">
         <HeaderLeft onClick={toggle}>
           <Tooltip placement="bottom" title="切换主题">
             <a href="#/" className="logo">
@@ -122,6 +125,7 @@ export default memo(function Header() {
             })}
           </div>
           {visible && <RightSearch />}
+          {visible && <Music />}
           {visible && <RightInfo />}
           {visible && <About />}
         </Drawer>

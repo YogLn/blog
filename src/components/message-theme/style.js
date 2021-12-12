@@ -29,12 +29,17 @@ export const MessageWrapper = styled.div`
       align-items: center;
 			.username {
 				color: #333;
+        font-size: 13px;
+        font-weight: bold;
 			}
       .time {
         color: #ccc;
         font-size: 12px;
         padding-left: 15px;
       }
+    }
+    .content {
+      font-size: 13px;
     }
   }
 

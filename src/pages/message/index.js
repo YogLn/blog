@@ -47,9 +47,9 @@ export default memo(function Message() {
   }, [setSize, size])
 
   return (
-    <MessageWrapper className="wrap-v2">
+    <MessageWrapper className="wrap-v3">
       <div className="message-list">
-        {messageList.map((item, index) => {
+        {messageList.map(item => {
           return <MessageTheme info={item} key={item.id}/>
         })}
       </div>

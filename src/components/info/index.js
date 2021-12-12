@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { SmileTwoTone } from '@ant-design/icons';
+import { TagTwoTone } from '@ant-design/icons';
 
 import { Tag } from 'antd'
 import { getColor } from '@/utils/color.js';
@@ -11,7 +11,7 @@ export default memo(function Info(props) {
   return (
     <InfoWrapper>
       <div className="header">
-        <div className="title"><SmileTwoTone />{title}</div>
+        <div className="title"><TagTwoTone twoToneColor="#00FF11"/>{title}</div>
         <a href="#/">more</a>
       </div>
       

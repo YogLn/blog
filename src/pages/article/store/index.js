@@ -1,9 +1,15 @@
-import reducer from './reducer';
-import { getArticleListAction, getLabelListAction, getUserInfoAction } from './actionCreators';
+import reducer from './reducer'
+import {
+  getArticleListAction,
+  getLabelListAction,
+  getUserInfoAction,
+  getHotListAction
+} from './actionCreators'
 
 export {
-	reducer,
-	getArticleListAction,
-	getLabelListAction,
-	getUserInfoAction
+  reducer,
+  getArticleListAction,
+  getLabelListAction,
+  getUserInfoAction,
+  getHotListAction
 }

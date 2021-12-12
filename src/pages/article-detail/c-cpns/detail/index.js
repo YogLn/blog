@@ -6,7 +6,7 @@ import gfm from 'remark-gfm'
 import { Divider, Anchor } from 'antd'
 import ReactMarkdown from 'react-markdown'
 import MarkdownNavbar from 'markdown-navbar'
-import { ClockCircleOutlined, CommentOutlined } from '@ant-design/icons'
+import { ClockCircleTwoTone, MessageTwoTone } from '@ant-design/icons'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { formatUtcString } from '@/utils/format'
@@ -57,11 +57,11 @@ export default memo(function Detail(props) {
         <div className="title">{articleDetail.title}</div>
         <div className="info">
           <span>
-            <ClockCircleOutlined />
+          <ClockCircleTwoTone twoToneColor="#FF0000"/>
             {formatUtcString(articleDetail.createAt)}
           </span>
           <span>
-            <CommentOutlined />
+          <MessageTwoTone twoToneColor="#00FF11"/>
             {articleDetail.commmentNum}
           </span>
         </div>

@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react'
 import { useSelector, shallowEqual } from 'react-redux'
 import { useHistory } from 'react-router-dom';
-import { HeartTwoTone, ClockCircleOutlined } from '@ant-design/icons'
+import { FireTwoTone, ClockCircleOutlined } from '@ant-design/icons'
 
 import { formatUtcString } from '@/utils/format'
 import { RecentWrapper } from './style'
@@ -25,7 +25,7 @@ export default memo(function RecentArticle(props) {
     <RecentWrapper>
       <div className="header">
         <div className="title">
-          <HeartTwoTone twoToneColor="#eb2f96" />
+          <FireTwoTone twoToneColor="#E60909" />
           <span className="title-name">{title}</span>
         </div>
         <a href="#/">more</a>

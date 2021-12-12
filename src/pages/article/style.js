@@ -1,14 +1,20 @@
 import styled from 'styled-components'
 
 export const ArticleWrapper = styled.div`
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1250px) {
     width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
   }
-  @media screen and (max-width: 900px) {
+  @media screen and (min-width: 950px) and (max-width: 1250px) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  @media screen and (max-width: 950px) {
     width: 100%;
     margin-top: 30px;
   }
@@ -23,14 +29,13 @@ export const ArticleLeft = styled.div`
       opacity: 0;
       transform: translateX(-100%);
     }
-
     100% {
       opacity: 1;
       transform: translateX(0);
     }
   }
-  @media screen and (max-width: 1250px) {
-    width: 90%;
+  @media screen and (max-width: 950px) {
+    width: 100%;
   }
 `
 
@@ -51,7 +56,7 @@ export const ArticleRight = styled.div`
     }
   }
 
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 950px) {
     display: none;
   }
 `

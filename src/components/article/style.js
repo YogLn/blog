@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 export const ArticleWrapper = styled.div`
+  position: relative;
   width: 100%;
   min-width: 370px;
   cursor: pointer;
-  margin: 20px 5px 0;
+  margin: 20px 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +38,30 @@ export const ArticleLeft = styled.div`
 `
 export const ArticleRight = styled.div`
   width: 45%;
+  height: 100%;
   text-align: center;
+  position: relative;
+  .circle {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: 0 2px;
+    }
+    span: nth-child(1) {
+      background-color: #ff0000;
+    }
+    span: nth-child(2) {
+      background-color: #00ff11;
+    }
+    span: nth-child(3) {
+      background-color: #2200ff;
+    }
+  }
   .title {
     font-size: 24px;
     margin: 20px 0;
