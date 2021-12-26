@@ -3,8 +3,8 @@ import React, { memo, useCallback, useState } from 'react'
 import { Tabs, message } from 'antd'
 import { SmileTwoTone } from '@ant-design/icons'
 import LoginBox from '@/components/login-box'
-import { getNum } from '@/utils/color';
-import { avatarList } from '@/common/local-data';
+import { getNum } from '@/utils/color'
+import { avatarList } from '@/common/local-data'
 
 import { register, login } from '@/service/user'
 import { LoginWrapper } from './style'
@@ -22,21 +22,28 @@ export default memo(function Login() {
   }
   const avatarUrl = avatarList[number]
   const handleSubmit = useCallback(async () => {
-    if (key === '1') {
-      await register({avatarUrl, ...form})
+    // 注册
+    if (key === 1) {
+      await register({ avatarUrl, ...form })
       const res = await login(form)
-      window.localStorage.setItem('token', res.token)
-      message.success('注册成功 已为您登录~')
+      if (res.code === 400) {
+        return message.error('用户名重复~')
+      } else {
+        window.localStorage.setItem('token', res.token)
+        message.success('注册成功 已为您登录~')
+      }
     } else {
+      // 登录
       try {
         const res = await login(form)
-        if(res.code === 400) {
+        if (res.code === 400) {
           return message.error('用户名或密码错误~')
+        } else {
+          message.success('登录成功~')
+          window.localStorage.setItem('token', res.token)
         }
-        window.localStorage.setItem('token', res.token)
-        message.success('登录成功~')
       } catch (error) {
-        message.error('用户名或密码错误~')
+        return message.error('用户名或密码错误~')
       }
     }
   }, [key, form, avatarUrl])

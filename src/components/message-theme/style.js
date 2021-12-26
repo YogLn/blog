@@ -6,8 +6,8 @@ export const MessageWrapper = styled.div`
   margin: 15px 0;
 	border-bottom: 1px solid #eee;
   padding-bottom: 5px;
-  animation: message-offset 0.6s linear;
-  transition: all 0.6s;
+  animation: moveUp 0.4s;
+  transition: all 0.4s;
   width: 100%;
   .left {
     width: 80px;
@@ -18,7 +18,7 @@ export const MessageWrapper = styled.div`
       height: 70px;
       border-radius: 50%;
       &:hover {
-        animation: avatar-rotate 0.6s linear alternate;
+        animation: avatar-rotate 0.7s linear alternate;
       }
     }
   }
@@ -52,13 +52,11 @@ export const MessageWrapper = styled.div`
     }
   }
   
-  @keyframes message-offset {
+  @keyframes moveUp {
     0% {
       transform: scale(0);
-      opacity: 0;
     }
     100% {
-      opacity: 1;
       transform: scale(1);
     }
   }

@@ -9,14 +9,14 @@ const initState = Map({
   hotList: [],
   playList: [
     {
-      name: '人间惊鸿客',
-      id: 1475091192,
+      name: '霜雪千年',
+      id: 36496389,
       pst: 0,
       t: 0,
       ar: [
         {
-          id: 1039314,
-          name: '叶里',
+          id: 1132127,
+          name: '萧忆情Alex',
           tns: [],
           alias: []
         }
@@ -24,38 +24,38 @@ const initState = Map({
       alia: [],
       pop: 100,
       st: 0,
-      rt: '',
-      fee: 8,
-      v: 5,
+      rt: null,
+      fee: 0,
+      v: 230,
       crbt: null,
       cf: '',
       al: {
-        id: 94677368,
-        name: '人间惊鸿客',
+        id: 3288038,
+        name: ' 热门华语281',
         picUrl:
-          'https://p1.music.126.net/Ud23i1ek4UrtgO3Tq2kB-g==/109951165282438230.jpg',
+          'https://p2.music.126.net/cpoUinrExafBHL5Nv5iDHQ==/109951166361218466.jpg',
         tns: [],
-        pic_str: '109951165282438230',
-        pic: 109951165282438220
+        pic_str: '109951166361218466',
+        pic: 109951166361218460
       },
-      dt: 189705,
+      dt: 241085,
       h: {
         br: 320000,
         fid: 0,
-        size: 7590765,
-        vd: -45897
+        size: 9653855,
+        vd: -37838
       },
       m: {
         br: 192000,
         fid: 0,
-        size: 4554477,
-        vd: -43310
+        size: 5792330,
+        vd: -37838
       },
       l: {
         br: 128000,
         fid: 0,
-        size: 3036333,
-        vd: -41674
+        size: 3861567,
+        vd: -37838
       },
       a: null,
       cd: '01',
@@ -64,23 +64,23 @@ const initState = Map({
       ftype: 0,
       rtUrls: [],
       djId: 0,
-      copyright: 1,
+      copyright: 2,
       s_id: 0,
-      mark: 0,
+      mark: 524416,
       originCoverType: 1,
       originSongSimpleData: null,
       tagPicList: null,
       resourceState: true,
-      version: 5,
+      version: 230,
       songJumpInfo: null,
       single: 0,
       noCopyrightRcmd: null,
-      mv: 0,
       rtype: 0,
       rurl: null,
       mst: 9,
-      cp: 1416569,
-      publishTime: 1599148800000
+      cp: 0,
+      mv: 5336575,
+      publishTime: 1388505600004
     },
     {
       name: '有何不可',
@@ -218,80 +218,6 @@ const initState = Map({
       mst: 9,
       cp: 14026,
       publishTime: 1461723397683
-    },
-    {
-      name: '霜雪千年',
-      id: 36496389,
-      pst: 0,
-      t: 0,
-      ar: [
-        {
-          id: 1132127,
-          name: '萧忆情Alex',
-          tns: [],
-          alias: []
-        }
-      ],
-      alia: [],
-      pop: 100,
-      st: 0,
-      rt: null,
-      fee: 0,
-      v: 230,
-      crbt: null,
-      cf: '',
-      al: {
-        id: 3288038,
-        name: ' 热门华语281',
-        picUrl:
-          'https://p2.music.126.net/cpoUinrExafBHL5Nv5iDHQ==/109951166361218466.jpg',
-        tns: [],
-        pic_str: '109951166361218466',
-        pic: 109951166361218460
-      },
-      dt: 241085,
-      h: {
-        br: 320000,
-        fid: 0,
-        size: 9653855,
-        vd: -37838
-      },
-      m: {
-        br: 192000,
-        fid: 0,
-        size: 5792330,
-        vd: -37838
-      },
-      l: {
-        br: 128000,
-        fid: 0,
-        size: 3861567,
-        vd: -37838
-      },
-      a: null,
-      cd: '01',
-      no: 1,
-      rtUrl: null,
-      ftype: 0,
-      rtUrls: [],
-      djId: 0,
-      copyright: 2,
-      s_id: 0,
-      mark: 524416,
-      originCoverType: 1,
-      originSongSimpleData: null,
-      tagPicList: null,
-      resourceState: true,
-      version: 230,
-      songJumpInfo: null,
-      single: 0,
-      noCopyrightRcmd: null,
-      rtype: 0,
-      rurl: null,
-      mst: 9,
-      cp: 0,
-      mv: 5336575,
-      publishTime: 1388505600004
     },
     {
       name: '麻雀',

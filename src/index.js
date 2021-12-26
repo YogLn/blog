@@ -8,8 +8,8 @@ import '@/assets/css/base.css'
 const root = document.getElementById('root')
 ReactDOM.render(<App />, root)
 new CanvasNest(root, {
-  color: '0,0,255',
-  opacity: 0.7,
-  zIndex: -2,
+  color: '255, 148, 253',
+  opacity: 0.8,
+  zIndex: -1,
   count: 200
 })

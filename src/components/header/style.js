@@ -32,6 +32,7 @@ export const HeaderWrapper = styled.div`
 
 export const HeaderLeft = styled.div`
   .logo {
+    user-select: none;
     background: url(${logo}) center no-repeat;
     display: inline-block;
     width: 60px;
@@ -60,6 +61,7 @@ export const HeaderLeft = styled.div`
     left: 60px;
     color: #999;
     cursor: default;
+    user-select: none;
 
     @media screen and (max-width: 950px) {
       display: none;

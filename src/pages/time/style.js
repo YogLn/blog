@@ -1,17 +1,18 @@
 import styled from 'styled-components'
 
-export const MessageWrapper = styled.div`
+export const TimeWrapper = styled.div`
   @media screen and (min-width: 950px) {
     width: 70%;
     margin: 0 auto;
+    border: 1px solid #fff;
   }
 
   @media screen and (max-width: 950px) {
     width: 100%;
   }
+  margin-top: 10px;
   position: relative;
   background-color: rgba(255, 255, 255, 0.85);
-  padding: 0px 15px 30px;
   &::before {
     content: ' ';
     position: absolute;
@@ -23,25 +24,35 @@ export const MessageWrapper = styled.div`
     transform-origin: 0 0;
     transform: scale(0.5);
   }
-  .aplayer-list-hide {
-    animation: moveUp 0.7s;
+  .timeline {
+    animation: img-show 0.7s;
     transition: all 0.7s;
+    padding: 20px 10px 0;
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #f5bc42;
+    }
+    .content {
+      font-size: 14px;
+      font-weight: bold;
+      color: #00b3ff;
+    }
+    img {
+      width: 100%;
+    }
+    .time {
+      font-size: 14px;
+      color: #9a99a1;
+    }
   }
-  .more {
-    color: #4c30ff;
-    text-align: center;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  .leave-message {
-    margin-top: 40px;
-    width: 100%;
-  }
-  @keyframes moveUp {
+  @keyframes img-show {
     0% {
+      opacity: 0;
       transform: scale(0);
     }
     100% {
+      opacity: 1;
       transform: scale(1);
     }
   }

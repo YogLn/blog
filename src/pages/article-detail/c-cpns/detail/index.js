@@ -12,7 +12,7 @@ import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { formatUtcString } from '@/utils/format'
 import { DetailWrapper, DetailLeft, DetailRight } from './style'
 import PandaIcon from './panda'
-import Comment from '../comment';
+import Comment from '../comment'
 import 'markdown-navbar/dist/navbar.css'
 
 export default memo(function Detail(props) {
@@ -30,7 +30,12 @@ export default memo(function Detail(props) {
           {...props}
         />
       ) : (
-        <code className={className} {...props} />
+        <span
+          className={className}
+          {...props}
+          children={children}
+          style={{ color: 'red', fontWeight: 'bold', display: 'inline-block', padding: '0 5px', fontSize: '16px'}}
+        />
       )
     }
   }
@@ -40,7 +45,6 @@ export default memo(function Detail(props) {
     }),
     shallowEqual
   )
-
   const backArticleList = () => {
     history.push('/article')
   }
@@ -57,11 +61,11 @@ export default memo(function Detail(props) {
         <div className="title">{articleDetail.title}</div>
         <div className="info">
           <span>
-          <ClockCircleTwoTone twoToneColor="#FF0000"/>
+            <ClockCircleTwoTone twoToneColor="#FF0000" />
             {formatUtcString(articleDetail.createAt)}
           </span>
           <span>
-          <MessageTwoTone twoToneColor="#00FF11"/>
+            <MessageTwoTone twoToneColor="#00FF11" />
             {articleDetail.commmentNum}
           </span>
         </div>
@@ -83,7 +87,7 @@ export default memo(function Detail(props) {
           <span>本文最后更新于:{formatUtcString(articleDetail.updateAt)}</span>
         </div>
         <div className="parting-line"></div>
-        <Comment articleId={articleId}/>
+        <Comment articleId={articleId} />
       </DetailLeft>
       <DetailRight>
         <Anchor>

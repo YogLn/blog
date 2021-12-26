@@ -43,21 +43,12 @@ export default memo(function Header() {
   }
 
   const showSelectItem = (item, index) => {
-    if (index !== 4) {
-      return (
-        <NavLink to={item.link} onClick={e => onClose()}>
-          <i className={item.icon}></i>
-          {item.title}
-        </NavLink>
-      )
-    } else {
-      return (
-        <a href={item.link}>
-          <i className={item.icon}></i>
-          {item.title}
-        </a>
-      )
-    }
+    return (
+      <NavLink to={item.link} onClick={e => onClose()}>
+        <i className={item.icon}></i>
+        {item.title}
+      </NavLink>
+    )
   }
 
   return (

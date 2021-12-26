@@ -70,9 +70,10 @@ export const AboutWrapper = styled.div`
       display: flex;
       align-items: center;
       .qq {
+        position: relative;
+        margin: 0 10px;
         color: #00a4ff;
         cursor: pointer;
-        position: relative;
         &:hover {
           & img {
             visibility: visible;
@@ -88,7 +89,7 @@ export const AboutWrapper = styled.div`
         }
       }
       .github {
-        margin: 0 30px;
+        margin: 0 10px;
         color: #000;
         cursor: pointer;
         position: relative;
@@ -107,9 +108,10 @@ export const AboutWrapper = styled.div`
         }
       }
       .wechat {
-        color: #4be97a;
-        cursor: pointer;
         position: relative;
+        color: #4be97a;
+        margin: 0 10px;
+        cursor: pointer;
         &:hover {
           & img {
             visibility: visible;
@@ -122,6 +124,15 @@ export const AboutWrapper = styled.div`
           position: absolute;
           width: 100px;
           height: 100px;
+        }
+      }
+
+      .juejin {
+        cursor: pointer;
+        margin: 0 10px;
+        img {
+          width: 30px;
+          height: 30px;
         }
       }
     }

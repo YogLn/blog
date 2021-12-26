@@ -1,27 +1,56 @@
 import styled from 'styled-components'
 
 export const DetailWrapper = styled.div`
- @media screen and (min-width: 900px) {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
- }
- @media screen and (max-width: 900px) {
-  width: 100%;
- }
+  @media screen and (min-width: 900px) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
 `
 export const DetailLeft = styled.div`
   padding: 20px 20px;
   border: 1px solid #ddd;
-  width: 70%;
+  width: 75%;
   background-color: #fff;
   word-wrap: break-word;
   word-break: break-all;
   white-space: normal;
-  .p {
-    word-wrap: break-word;
-    word-break: break-all;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 30px 0 15px;
+    font-weight: bold;
+  }
+  p {
     white-space: normal;
+    font-size: 15px;
+    line-height: 2;
+  }
+  blockquote {
+    margin: 3px 0;
+    padding: 10px;
+    background: #ff94fd;
+    border-radius: 5px;
+    position: relative;
+    text-indent:2em;
+    /* border: '1px solid red' */
+    &::before {
+      content: '🚩';
+      display: inline-block;
+      position: absolute;
+      left: -10px;
+    }
+  }
+  img {
+    margin: 15px 0;
+    box-shadow: 1px 1px 2px 2px #ccc;
   }
   .top {
     width: 100%;
@@ -62,6 +91,7 @@ export const DetailLeft = styled.div`
   }
   .description {
     margin-top: 20px;
+    font-size: 15px;
     width: 100%;
     color: #666;
     text-align: center;
@@ -101,7 +131,7 @@ export const DetailRight = styled.div`
   background-color: #fff;
   color: #000;
   opacity: 0.8;
-  width: 20%;
+  width: 25%;
   .article-menu {
     width: 100%;
   }

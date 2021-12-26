@@ -20,9 +20,9 @@ export const headerLinks = [
 		icon: 'iconfont icon-liuyanban-05'
 	},
 	{
-		title: 'GitHub',
-		link: 'https://github.com/YogLn',
-		icon: 'iconfont icon-github1'
+		title: '归档',
+		link: '/time',
+		icon: 'iconfont icon-ic_history'
 	},
 	{
 		title: '登录/注册',
