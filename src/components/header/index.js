@@ -45,7 +45,7 @@ export default memo(function Header() {
   const showSelectItem = (item, index) => {
     return (
       <NavLink to={item.link} onClick={e => onClose()}>
-        <i className={item.icon}></i>
+        {item.icon}
         {item.title}
       </NavLink>
     )
@@ -92,7 +92,7 @@ export default memo(function Header() {
           headerStyle={{ backgroundColor: '#FBE8E6' }}
           bodyStyle={{
             fontSize: '16px',
-            backgroundImage: `url('https://s2.loli.net/2021/12/04/4ygIYEfKsnBwtUG.png')`,
+            backgroundImage: `url('https://blog-1304388092.cos.ap-chengdu.myqcloud.com/blog%2Fimg%20(1).png')`,
             objectFit: 'center',
             backgroundPositionX: '-80%'
           }}

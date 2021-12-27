@@ -1,20 +1,26 @@
 import React, { memo } from 'react'
 import { HomeWrapper } from './style'
 
-import cloud from '@/assets/img/cloud.png'
-import water from '@/assets/img/water.png'
-import boat from '@/assets/img/boat.png'
-
 export default memo(function Home() {
   return (
     <HomeWrapper>
       <div className="container">
-        <img src={cloud} alt="" className="cloud" />
-        
+        <img
+          src="https://blog-1304388092.cos.ap-chengdu.myqcloud.com/blog%2Fcloud.png"
+          alt=""
+          className="cloud"
+        />
         <div className="ocean">
-          <img src={water} alt="" className="water" />
+          <img
+            src="https://blog-1304388092.cos.ap-chengdu.myqcloud.com/blog%2Fwater.png"
+            alt=""
+            className="water"
+          />
           <div className="boat">
-            <img src={boat} alt="" />
+            <img
+              src="https://blog-1304388092.cos.ap-chengdu.myqcloud.com/blog%2Fboat.png"
+              alt=""
+            />
           </div>
         </div>
       </div>

@@ -34,7 +34,17 @@ export default memo(function Detail(props) {
           className={className}
           {...props}
           children={children}
-          style={{ color: 'red', fontWeight: 'bold', display: 'inline-block', padding: '0 5px', fontSize: '16px'}}
+          style={{
+            color: '#ff0000',
+            fontWeight: 'bold',
+            display: 'inline-block',
+            padding: '0 5px',
+            fontSize: '16px',
+            backgroundColor: '#eee',
+            borderRadius: '8px',
+            height: '28px',
+            lineHeight: '28px'
+          }}
         />
       )
     }

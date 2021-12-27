@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import background from '@/assets/img/background.jpg'
 
 export const HomeWrapper = styled.div`
   overflow: hidden;
@@ -12,7 +11,7 @@ export const HomeWrapper = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
-    background-image: url(${background});
+    background-image: url('https://blog-1304388092.cos.ap-chengdu.myqcloud.com/blog%2Fbackground.jpg');
     background-position: center;
     overflow: hidden;
 

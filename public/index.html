@@ -19,19 +19,108 @@
     <script src="dist/canvas-nest.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script>
-      const title = document.querySelector('title');
+      !(function () {
+        function e(e, t, n) {
+          return Number(e.getAttribute(t)) || n
+        }
+        function t() {
+          for (
+            r.clearRect(0, 0, h, s),
+              a = [
+                { x: 0, y: 0.7 * s + f },
+                { x: 0, y: 0.7 * s - f }
+              ];
+            a[1].x < h + f;
+
+          )
+            n(a[0], a[1])
+        }
+        function n(e, t) {
+          r.beginPath(), r.moveTo(e.x, e.y), r.lineTo(t.x, t.y)
+          var n = t.x + (2 * p() - 0.25) * f,
+            o = i(t.y)
+          r.lineTo(n, o),
+            r.closePath(),
+            (m -= x / -50),
+            (r.fillStyle =
+              '#' +
+              (
+                ((127 * y(m) + 128) << 16) |
+                ((127 * y(m + x / 3) + 128) << 8) |
+                (127 * y(m + (x / 3) * 2) + 128)
+              ).toString(16)),
+            r.fill(),
+            (a[0] = a[1]),
+            (a[1] = { x: n, y: o })
+        }
+        function i(e) {
+          return (l = e + (2 * p() - 1.1) * f), l > s || l < 0 ? i(e) : l
+        }
+        var o = document.getElementsByTagName('script'),
+          c = o[o.length - 1]
+        config = {
+          z: e(c, 'zIndex', -1),
+          a: e(c, 'alpha', 0.6),
+          s: e(c, 'size', 90)
+        }
+        var a,
+          l,
+          d = document.createElement('canvas'),
+          r = d.getContext('2d'),
+          g = window.devicePixelRatio || 1,
+          h = window.innerWidth,
+          s = window.innerHeight,
+          f = config.s,
+          u = Math,
+          m = 0,
+          x = 2 * u.PI,
+          y = u.cos,
+          p = u.random
+        ;(d.width = h * g),
+          (d.height = s * g),
+          r.scale(g, g),
+          (r.globalAlpha = config.a),
+          (d.style.cssText =
+            'opacity: ' +
+            config.a +
+            ';position:fixed;top:0;left:0;z-index: ' +
+            config.z +
+            ';width:100%;height:100%;pointer-events:none;'),
+          document.getElementsByTagName('body')[0].appendChild(d),
+          (document.onclick = t),
+          (document.ontouchstart = t),
+          t()
+      })()
+
+      
+      const title = document.querySelector('title')
       window.onblur = function (e) {
-        title.innerHTML = '无缘再见的人生死不会相见';
+        title.innerHTML = '无缘再见的人生死不会相见'
       }
       window.onfocus = function (e) {
-        title.innerHTML = '久别重逢的人终会久别重逢';
+        title.innerHTML = '久别重逢的人终会久别重逢'
       }
-      console.error("这不是一个 bug，这只是一个未列出来的特性")
-      console.log("%c 💩💩💩💩💩💩💩💩💩💩"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:2em;line-height:60px;")
-      console.log("%c 加油陌生人，晨曦是在太阳照耀下才能出现，太阳的光芒普照万物的时刻即将到来。而你的身后，则还是无尽的黑夜。", "color: red")
-      console.log('%c 北京热还是东京热?', 'color: #fff; background: #f40; font-size: 24px;border-radius:0 15px 15px 0;padding:10px;');
-      console.log("%c                                           ","background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:5em;width:1px;height:40px;padding:2px;")
-      console.log("%c  热 热 热 热 热", "color:red;font-size:30px;font-weight:bolder;padding:50px 420px;line-height:10px;background:url('http://img.zcool.cn/community/0127c0577e00620000012e7e12da0e.gif') repeat-x;background-size:contain;");
+      console.error('这不是一个 bug，这只是一个未列出来的特性')
+      console.log(
+        '%c 💩💩💩💩💩💩💩💩💩💩',
+        ' text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:2em;line-height:60px;'
+      )
+      console.log(
+        '%c 加油陌生人，晨曦是在太阳照耀下才能出现，太阳的光芒普照万物的时刻即将到来。而你的身后，则还是无尽的黑夜。',
+        'color: red'
+      )
+      console.log(
+        '%c 北京热还是东京热?',
+        'color: #fff; background: #f40; font-size: 24px;border-radius:0 15px 15px 0;padding:10px;'
+      )
+      console.log(
+        '%c                                           ',
+        'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:5em;width:1px;height:40px;padding:2px;'
+      )
+      console.log(
+        '%c  热 热 热 热 热',
+        "color:red;font-size:30px;font-weight:bolder;padding:50px 420px;line-height:10px;background:url('http://img.zcool.cn/community/0127c0577e00620000012e7e12da0e.gif') repeat-x;background-size:contain;"
+      )
     </script>
   </body>
 </html>

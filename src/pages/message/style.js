@@ -12,21 +12,12 @@ export const MessageWrapper = styled.div`
   position: relative;
   background-color: rgba(255, 255, 255, 0.85);
   padding: 0px 15px 30px;
-  &::before {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    border: 1px solid #ccc;
-    transform-origin: 0 0;
-    transform: scale(0.5);
-  }
-  .aplayer-list-hide {
+  border: 1px solid #eee;
+  .player {
     animation: moveUp 0.7s;
     transition: all 0.7s;
   }
+ 
   .more {
     color: #4c30ff;
     text-align: center;

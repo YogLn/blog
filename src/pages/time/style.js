@@ -10,11 +10,11 @@ export const TimeWrapper = styled.div`
   @media screen and (max-width: 950px) {
     width: 100%;
   }
-  margin-top: 10px;
+  padding-top: 20px;
   position: relative;
   background-color: rgba(255, 255, 255, 0.85);
   &::before {
-    content: ' ';
+    content: '';
     position: absolute;
     top: 0;
     left: 0;

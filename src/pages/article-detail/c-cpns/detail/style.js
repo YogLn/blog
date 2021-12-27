@@ -36,7 +36,7 @@ export const DetailLeft = styled.div`
   blockquote {
     margin: 3px 0;
     padding: 10px;
-    background: #ff94fd;
+    background: #eee;
     border-radius: 5px;
     position: relative;
     text-indent:2em;
@@ -64,7 +64,7 @@ export const DetailLeft = styled.div`
     .back {
       color: #2782e3;
       font-weight: bold;
-      margin-right: 5px;
+      padding: 0 8px;
       cursor: pointer;
       text-decoration: underline;
     }
@@ -108,6 +108,10 @@ export const DetailLeft = styled.div`
     align-items: center;
     justify-content: flex-end;
     color: #ddd;
+  }
+  a {
+    color: #005ef5;
+    text-decoration: underline;
   }
   .parting-line {
     height: 4px;

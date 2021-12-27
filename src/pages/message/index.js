@@ -32,7 +32,6 @@ export default memo(function Message() {
   }, [dispatch, size])
 
   useEffect(() => {
-    console.log(musicList);
     new APlayer({
       container: document.querySelector('.player'),
       mini: false,
@@ -73,7 +72,7 @@ export default memo(function Message() {
   }, [setSize, size])
 
   return (
-    <MessageWrapper className="wrap-v3">
+    <MessageWrapper>
       <div className="player"></div>
       <Divider />
       <div className="message-list">

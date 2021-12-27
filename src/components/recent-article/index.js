@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react'
 import { useSelector, shallowEqual } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'
 import { FireTwoTone, ClockCircleOutlined } from '@ant-design/icons'
 
 import { formatUtcString } from '@/utils/format'
@@ -8,18 +8,20 @@ import { RecentWrapper } from './style'
 
 export default memo(function RecentArticle(props) {
   const { title } = props
-	const history = useHistory();
+  const history = useHistory()
   const { hotList } = useSelector(
     state => ({
       hotList: state.getIn(['article', 'hotList'])
     }),
     shallowEqual
   )
-
-  const handleArticleClick = useCallback(item => {
-    const { id } = item
-		history.push(`/article/detail/${id}`)
-  }, [history])
+  const handleArticleClick = useCallback(
+    item => {
+      const { id } = item
+      history.push(`/article/detail/${id}`)
+    },
+    [history]
+  )
 
   return (
     <RecentWrapper>
@@ -41,7 +43,7 @@ export default memo(function RecentArticle(props) {
               <div className="title">{item.title}</div>
               <div className="right">
                 <ClockCircleOutlined />
-                <span>{formatUtcString(item.createTime, 'YYYY-MM-DD')}</span>
+                <span>{formatUtcString(item.createAt, 'YYYY-MM-DD')}</span>
               </div>
             </div>
           )
