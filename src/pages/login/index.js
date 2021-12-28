@@ -1,7 +1,6 @@
 import React, { memo, useCallback, useState } from 'react'
 
-import { Tabs, message } from 'antd'
-import { SmileTwoTone } from '@ant-design/icons'
+import { message } from 'antd'
 import LoginBox from '@/components/login-box'
 import { getNum } from '@/utils/color'
 import { avatarList } from '@/common/local-data'
@@ -11,19 +10,21 @@ import { LoginWrapper } from './style'
 
 export default memo(function Login() {
   const number = getNum()
-  const [key, setKey] = useState(1)
+  const [tag, setTag] = useState(1)
   const [form, setForm] = useState({
     name: '',
     password: ''
   })
-  const { TabPane } = Tabs
-  const handleTabChange = key => {
-    setKey(key)
+  const handleTabChange = tag => {
+    setTag(tag)
   }
   const avatarUrl = avatarList[number]
   const handleSubmit = useCallback(async () => {
     // 注册
-    if (key === 1) {
+    if(!form.name || !form.password) {
+      return message.info('请输入账号密码~')
+    }
+    if (tag === 0) {
       await register({ avatarUrl, ...form })
       const res = await login(form)
       if (res.code === 400) {
@@ -46,45 +47,30 @@ export default memo(function Login() {
         return message.error('用户名或密码错误~')
       }
     }
-  }, [key, form, avatarUrl])
+  }, [tag, form, avatarUrl])
 
   return (
-    <LoginWrapper className="wrap-v2">
+    <LoginWrapper>
       <div className="tab">
-        <Tabs onChange={handleTabChange} type="card">
-          <TabPane
-            tab={
-              <span>
-                <SmileTwoTone />
-                我是新朋友
-              </span>
-            }
-            key="1"
-          >
-            <LoginBox
-              form={form}
-              setForm={setForm}
-              handleRegister={handleSubmit}
-              btnName="注册"
-            />
-          </TabPane>
-          <TabPane
-            tab={
-              <span>
-                <SmileTwoTone />
-                我是老朋友
-              </span>
-            }
-            key="2"
-          >
-            <LoginBox
-              form={form}
-              setForm={setForm}
-              handleRegister={handleSubmit}
-              btnName="登录"
-            />
-          </TabPane>
-        </Tabs>
+        {tag === 1 ? (
+          <LoginBox
+            form={form}
+            tag={tag}
+            setForm={setForm}
+            handleRegister={handleSubmit}
+            handleTabChange={handleTabChange}
+            btnName="登录"
+          />
+        ) : (
+          <LoginBox
+            form={form}
+            tag={tag}
+            setForm={setForm}
+            handleRegister={handleSubmit}
+            handleTabChange={handleTabChange}
+            btnName="注册"
+          />
+        )}
       </div>
     </LoginWrapper>
   )

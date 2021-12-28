@@ -40,12 +40,13 @@ export const DetailLeft = styled.div`
     border-radius: 5px;
     position: relative;
     text-indent:2em;
-    /* border: '1px solid red' */
+    border: 1px solid #999;
     &::before {
       content: '🚩';
       display: inline-block;
       position: absolute;
       left: -10px;
+      top: 12px;
     }
   }
   img {
