@@ -39,31 +39,8 @@ export const AboutWrapper = styled.div`
   }
   .concat {
     margin-top: 20px;
-    .social-contact {
-      font-size: 20px;
-      font-weight: 700;
-      color: #666;
-      position: relative;
-      text-align: center;
-    }
-    .social-contact::before {
-      content: '';
-      border-top: 1px solid #ccc;
-      display: block;
-      position: absolute;
-      width: 50%;
-      top: 50%;
-      left: 120px;
-    }
-
-    .social-contact::after {
-      content: '';
-      border-top: 1px solid #ccc;
-      display: block;
-      position: absolute;
-      width: 50%;
-      top: 50%;
-      right: 120px;
+    .ant-divider-inner-text {
+      font-size: 20px
     }
     .tag {
       font-size: 30px;

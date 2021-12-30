@@ -13,6 +13,10 @@ export const TimeWrapper = styled.div`
   padding-top: 20px;
   position: relative;
   background-color: rgba(255, 255, 255, 0.85);
+  .ant-timeline-item-content {
+    font-size: 16px;
+    color: #f5bc42;
+  }
   &::before {
     content: '';
     position: absolute;

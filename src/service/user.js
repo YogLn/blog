@@ -21,3 +21,10 @@ export function login(data) {
 		data
 	})
 }
+export function uploadAvatarAPI(id, data) {
+	return request({
+		url: `/users/avatar/${id}`,
+		method: 'POST',
+		data
+	})
+}

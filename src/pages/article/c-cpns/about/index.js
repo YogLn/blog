@@ -7,6 +7,7 @@ import {
   WechatOutlined,
   AimOutlined
 } from '@ant-design/icons'
+import {Divider} from 'antd';
 
 import qq from '@/assets/img/qq.jpg'
 import weixin from '@/assets/img/weixin.jpg'
@@ -30,25 +31,25 @@ export default memo(function About() {
           <AimOutlined />
           <span>四川·成都</span>
         </div>
-        <div className="front">前端:React + Redux + Antd</div>
-        <div className="admin">后台:Vue3 + Vite + ElementPlus</div>
-        <div className="back">后端: Node + Koa + MySql</div>
+        <div className="front">前端 React + Redux + Antd</div>
+        <div className="admin">后台 Vue3 + Vite + ElementPlus</div>
+        <div className="back">后端 Node + Koa + MySql</div>
         <div className="email">
           <MailOutlined />
           <span>15508067205@163.com</span>
         </div>
       </div>
       <div className="concat">
-        <div className="social-contact">社交账号</div>
+        <Divider plain>社交账号</Divider>
         <div className="tag">
-          <div className="qq">
-            <QqOutlined />
-            <img src={qq} alt="" />
-          </div>
-          <div className="github">
+        <div className="github">
             <a href="https://github.com/YogLn">
               <GithubOutlined/>
             </a>
+          </div>
+          <div className="qq">
+            <QqOutlined />
+            <img src={qq} alt="" />
           </div>
           <div className="wechat">
             <WechatOutlined />
