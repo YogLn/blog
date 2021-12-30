@@ -1,15 +1,17 @@
-import React, { memo, useRef, useCallback } from 'react'
+import React, { memo, useRef, useCallback, useState } from 'react'
 import COS from 'cos-js-sdk-v5'
 import { Upload, message } from 'antd';
 import { UserOutlined, KeyOutlined } from '@ant-design/icons'
 import {uploadAvatarAPI} from '@/service/user';
 
 import { LoginBoxWrapper } from './style'
-import avatar1 from '@/assets/img/avatar1.jpg'
-import avatar2 from '@/assets/img/avatar2.jpg'
+import a1 from '@/assets/img/avatar1.jpg'
+import a2 from '@/assets/img/avatar2.jpg'
 
 export default memo(function Login(props) {
   const { form, setForm, handleRegister, btnName, handleTabChange } = props
+  const [avatar1, setAvatar1] = useState(a1)
+  const [avatar2, setAvatar2] = useState(a2)
   const loginRef = useRef()
   const updateField = e => {
     setForm({
@@ -70,10 +72,10 @@ export default memo(function Login(props) {
       if (data.statusCode === 200) {
         // 2. 显示图片
         let avatarUrl = `https:${data.Location}`
-        console.log(avatarUrl);
+        setAvatar1(avatarUrl)
+        setAvatar2(avatarUrl)
         // 3. 上传头像到服务器
         try {
-          console.log(id, {avatarUrl});
           await uploadAvatarAPI(id, {avatarUrl})
           message.success('头像上传成功~')
         } catch (error) {
