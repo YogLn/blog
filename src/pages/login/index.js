@@ -47,7 +47,10 @@ export default memo(function Login() {
       } else {
         window.localStorage.setItem('token', res.token)
         window.localStorage.setItem('id', res.id)
+        window.localStorage.setItem('name', res.name)
+        window.localStorage.setItem('avatarUrl', res.avatarUrl)
         message.success('注册成功 已为您登录~')
+        window.location.reload()
       }
     } else {
       // 登录
@@ -59,6 +62,9 @@ export default memo(function Login() {
           message.success('登录成功~')
           window.localStorage.setItem('token', res.token)
           window.localStorage.setItem('id', res.id)
+          window.localStorage.setItem('name', res.name)
+          window.localStorage.setItem('avatarUrl', res.avatarUrl)
+          window.location.reload()
         }
       } catch (error) {
         return message.error('用户名或密码错误~')

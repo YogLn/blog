@@ -8,7 +8,7 @@ export const LoginBoxWrapper = styled.div`
   width: 20rem;
   height: 28rem;
   z-index: 10;
-  
+
   .box {
     position: absolute;
     top: 0;
@@ -20,24 +20,40 @@ export const LoginBoxWrapper = styled.div`
     backface-visibility: hidden;
     transition: all 0.5s;
     user-select: none;
-    
+
     .form-content {
       position: relative;
       width: 100%;
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
       box-shadow: 0 0 2px #3399ff;
       border-radius: 30px;
       background-color: #fff;
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 10%;
+        button {
+          text-transform: uppercase;
+          padding: 8px;
+          border: none;
+          outline: none;
+          background-color: #0066ff;
+          color: #fff;
+          width: 12rem;
+          border-radius: 30px;
+          cursor: pointer;
+        }
+      }
+
       .avtar {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         .pic {
+          margin-top: 10%;
           position: relative;
           width: 80px;
           height: 80px;
@@ -55,6 +71,9 @@ export const LoginBoxWrapper = styled.div`
       }
       h1 {
         font-size: 1.6rem;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
       }
       .form {
         display: flex;
@@ -78,7 +97,7 @@ export const LoginBoxWrapper = styled.div`
           justify-content: center;
           align-items: center;
           width: 100%;
-          margin-top: 10px;
+          margin-top: 10%;
           button {
             text-transform: uppercase;
             padding: 8px;
@@ -107,6 +126,8 @@ export const LoginBoxWrapper = styled.div`
       .btn-something {
         color: #888;
         font-size: 14px;
+        text-align: center;
+        margin-top: 10%;
         .signup-btn {
           color: #0066ff;
           cursor: pointer;
