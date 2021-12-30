@@ -23,8 +23,8 @@ export default memo(function Music() {
   const audioRef = useRef()
 
   useEffect(() => {
-    audioRef.current.src = getPlaySong(playList[index]?.id)
-  }, [])
+    audioRef.current.src = getPlaySong(playList[0]?.id)
+  }, [playList])
 
   const changeIndex = tag => {
     if (tag === 'left') {
@@ -48,10 +48,10 @@ export default memo(function Music() {
       setIndex(newIndex)
       setCurrentSong(playList[newIndex])
       audioRef.current.src = getPlaySong(playList[newIndex]?.id)
-      audioRef.current.play().then(res => {
+      audioRef.current.play().then(_=> {
         setPlay(true)
       }).catch(err => {
-        console.log(err);
+        setPlay(true)
       })
     }
   }
