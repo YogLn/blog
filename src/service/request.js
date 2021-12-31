@@ -11,7 +11,7 @@ instance.interceptors.request.use(config => {
   // 1.发送网络请求时, 在界面的中间位置显示Loading的组件
 
   // 2.某一些请求要求用户必须携带token, 如果没有携带, 那么直接跳转到登录页面
-  const token = window.localStorage.getItem('token')
+  const token = window.sessionStorage.getItem('token')
   if(token) {
     config.headers.authorization = token
   }

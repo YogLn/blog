@@ -12,8 +12,8 @@ export default memo(function Login(props) {
   const { form, setForm, handleRegister, btnName, handleTabChange } = props
   const [avatar1, setAvatar1] = useState(a1)
   const [avatar2, setAvatar2] = useState(a2)
-  const avatarUrl = window.localStorage.getItem('avatarUrl')
-  const name = window.localStorage.getItem('name')
+  const avatarUrl = window.sessionStorage.getItem('avatarUrl')
+  const name = window.sessionStorage.getItem('name')
   const [avatar, setAvatar] = useState(avatarUrl)
   const [username, setUsername] = useState(name)
   const loginRef = useRef()
@@ -61,7 +61,7 @@ export default memo(function Login(props) {
     if (!files.file) {
       return
     }
-    const id = window.localStorage.getItem('id')
+    const id = window.sessionStorage.getItem('id')
     if (!id) {
       return message.error('您还没有登录~')
     }
@@ -93,7 +93,7 @@ export default memo(function Login(props) {
   }, [])
 
   const LoginOut = () => {
-    window.localStorage.clear()
+    window.sessionStorage.clear()
     setAvatar(null)
     setUsername(null)
   }

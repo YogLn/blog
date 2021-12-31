@@ -12,19 +12,23 @@ import { addComment, replayComment, like, dislike } from '@/service/comment'
 import { formatUtcString, formatComment } from '@/utils/format'
 
 import { Comment, List, Tooltip, Button, Input, message, Modal } from 'antd'
+import { Picker } from 'emoji-mart'
 import {
   DislikeOutlined,
   LikeOutlined,
   DislikeFilled,
-  LikeFilled
+  LikeFilled,
+  SmileTwoTone
 } from '@ant-design/icons'
 import { CommentWrapper } from './style'
+import 'emoji-mart/css/emoji-mart.css'
 
 export default memo(function ArticleComment(props) {
   const { articleId } = props
   const { TextArea } = Input
   // 添加评论
   const [commentValue, setCommentValue] = useState(null)
+  const [showPicker, setShowPicker] = useState(false)
   // 回复评论相关
   const [commentId, setCommentId] = useState(0)
   const [replayValue, setReplayValue] = useState(null)
@@ -70,7 +74,7 @@ export default memo(function ArticleComment(props) {
 
   const handleSubmit = async () => {
     try {
-      const token = window.localStorage.getItem('token')
+      const token = window.sessionStorage.getItem('token')
       if (token) {
         await addComment({
           articleId,
@@ -89,7 +93,7 @@ export default memo(function ArticleComment(props) {
 
   const handleReplay = useCallback(async () => {
     try {
-      const token = window.localStorage.getItem('token')
+      const token = window.sessionStorage.getItem('token')
       if (token) {
         await replayComment(commentId, {
           articleId,
@@ -110,6 +114,11 @@ export default memo(function ArticleComment(props) {
   const handleShowReplay = item => {
     setCommentId(item.id)
     setReplayVisible(true)
+  }
+
+  const handleEmojiClick = (emoji, e) => {
+    const newCommentValue = commentValue + emoji.native
+    setCommentValue(newCommentValue)
   }
 
   const cancelReplay = () => {
@@ -159,6 +168,17 @@ export default memo(function ArticleComment(props) {
         onChange={e => setCommentValue(e.target.value)}
         value={commentValue}
       />
+      <SmileTwoTone
+        twoToneColor="#f8db57"
+        onClick={e => setShowPicker(!showPicker)}
+        className="smile-two-tone"
+      />
+      {showPicker && (
+        <Picker
+          set="apple"
+          onClick={(emoji, e) => handleEmojiClick(emoji, e)}
+        />
+      )}
       <Button onClick={e => handleSubmit()} type="primary" className="submit">
         添加评论
       </Button>

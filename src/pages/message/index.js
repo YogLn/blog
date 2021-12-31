@@ -2,20 +2,23 @@ import React, { memo, useEffect, useCallback, useState } from 'react'
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import APlayer from 'aplayer'
 
-import { Divider } from 'antd';
+import { SmileTwoTone } from '@ant-design/icons'
+import { Picker } from 'emoji-mart'
 import {
   getMessageListAction,
   getMusicListAction
 } from './store/actionCreators'
-import { Input, Button, message as AMessage } from 'antd'
+import { Input, Button, message as AMessage, Divider } from 'antd'
 import MessageTheme from '@/components/message-theme'
 import { publishMessage } from '@/service/message'
 import { MessageWrapper } from './style'
 import 'aplayer/dist/APlayer.min.css'
+import 'emoji-mart/css/emoji-mart.css'
 
 export default memo(function Message() {
   const { TextArea } = Input
   const [message, setMessage] = useState('')
+  const [showPicker, setShowPicker] = useState(false)
   const dispatch = useDispatch()
   const [size, setSize] = useState(5)
   const { messageList, musicList } = useSelector(
@@ -25,7 +28,7 @@ export default memo(function Message() {
     }),
     shallowEqual
   )
-
+    console.log(musicList);
   useEffect(() => {
     dispatch(getMessageListAction(0, size))
     dispatch(getMusicListAction())
@@ -42,7 +45,6 @@ export default memo(function Message() {
       volume: 0.7,
       mutex: true,
       listFolded: false,
-      listMaxHeight: 90,
       lrcType: 3,
       audio: musicList
     })
@@ -50,7 +52,7 @@ export default memo(function Message() {
 
   const handleLeave = useCallback(async () => {
     try {
-      const token = window.localStorage.getItem('token')
+      const token = window.sessionStorage.getItem('token')
       if (token) {
         try {
           await publishMessage({ content: message })
@@ -71,6 +73,11 @@ export default memo(function Message() {
     setSize(size + 10)
   }, [setSize, size])
 
+  const handleEmojiClick = (emoji, e) => {
+    const newMessage = message + emoji.native
+    setMessage(newMessage)
+  }
+
   return (
     <MessageWrapper>
       <div className="player"></div>
@@ -89,7 +96,22 @@ export default memo(function Message() {
           value={message}
           onChange={e => setMessage(e.target.value)}
         />
-        <Button type="primary" onClick={e => handleLeave()}>
+        <SmileTwoTone
+          twoToneColor="#f8db57"
+          onClick={e => setShowPicker(!showPicker)}
+          className="smile-two-tone"
+        />
+        {showPicker && (
+          <Picker
+            set="apple"
+            onClick={(emoji, e) => handleEmojiClick(emoji, e)}
+          />
+        )}
+        <Button
+          type="primary"
+          onClick={e => handleLeave()}
+          className="submit-btn"
+        >
           提交留言
         </Button>
       </div>

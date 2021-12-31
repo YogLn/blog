@@ -17,6 +17,11 @@ export const TimeWrapper = styled.div`
     font-size: 16px;
     color: #f5bc42;
   }
+  .ant-timeline.ant-timeline-alternate .ant-timeline-item-left .ant-timeline-item-content, .ant-timeline.ant-timeline-right .ant-timeline-item-left .ant-timeline-item-content, .ant-timeline.ant-timeline-label .ant-timeline-item-left .ant-timeline-item-content {
+    left: calc(50% - 4px);
+    width: calc(50% - 25px);
+    text-align: left;
+}
   &::before {
     content: '';
     position: absolute;

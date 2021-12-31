@@ -17,7 +17,7 @@ export const MessageWrapper = styled.div`
     animation: moveUp 0.7s;
     transition: all 0.7s;
   }
- 
+
   .more {
     color: #4c30ff;
     text-align: center;
@@ -27,6 +27,24 @@ export const MessageWrapper = styled.div`
   .leave-message {
     margin-top: 40px;
     width: 100%;
+
+    .emoji-mart {
+      position: absolute;
+      left: 15px;
+      margin-top: 5px;
+      bottom: 180px;
+    }
+
+    .submit-btn {
+      right: 0;
+      margin-top: 5px;
+      position: absolute;
+      right: 15px;
+    }
+    .smile-two-tone {
+      font-size: 20px;
+      margin-top: 5px;
+    }
   }
   @keyframes moveUp {
     0% {

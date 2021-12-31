@@ -45,10 +45,10 @@ export default memo(function Login() {
       if (res.code === 400) {
         return message.error('用户名重复~')
       } else {
-        window.localStorage.setItem('token', res.token)
-        window.localStorage.setItem('id', res.id)
-        window.localStorage.setItem('name', res.name)
-        window.localStorage.setItem('avatarUrl', res.avatarUrl)
+        window.sessionStorage.setItem('token', res.token)
+        window.sessionStorage.setItem('id', res.id)
+        window.sessionStorage.setItem('name', res.name)
+        window.sessionStorage.setItem('avatarUrl', res.avatarUrl)
         message.success('注册成功 已为您登录~')
         window.location.reload()
       }
@@ -60,10 +60,10 @@ export default memo(function Login() {
           return message.error('用户名或密码错误~')
         } else {
           message.success('登录成功~')
-          window.localStorage.setItem('token', res.token)
-          window.localStorage.setItem('id', res.id)
-          window.localStorage.setItem('name', res.name)
-          window.localStorage.setItem('avatarUrl', res.avatarUrl)
+          window.sessionStorage.setItem('token', res.token)
+          window.sessionStorage.setItem('id', res.id)
+          window.sessionStorage.setItem('name', res.name)
+          window.sessionStorage.setItem('avatarUrl', res.avatarUrl)
           window.location.reload()
         }
       } catch (error) {
