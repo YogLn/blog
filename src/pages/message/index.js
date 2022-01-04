@@ -45,7 +45,7 @@ export default memo(function Message() {
       volume: 0.7,
       mutex: true,
       listFolded: false,
-      lrcType: 3,
+      lrcType: 1,
       audio: musicList
     })
   }, [musicList])
