@@ -106,7 +106,8 @@ export default memo(function Detail(props) {
             className="article-menu"
             source={articleDetail.content}
             headingTopOffset={80}
-            ordered={false}
+            ordered
+            declarative
             updateHashAuto={false}
           />
         </Anchor>

@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+export const Wrapper = styled.div`
+  .antd-image {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+`
 export const PhotoWrapper = styled.div`
   border: 2px solid hsla(0, 0%, 0%, 0.5);
   position: relative;
@@ -51,7 +58,6 @@ export const PhotoWrapper = styled.div`
       }
     }
   }
-
   @keyframes photo-show {
     0% {
       opacity: 0;

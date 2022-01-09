@@ -29,7 +29,7 @@ export const getMusicListAction = () => {
       })
       console.log(
         res.unshift({
-          artist: '萧忆情Alex',
+          artist: 'Hawk Nelson',
           cover:
             'https://p2.music.126.net/UR8jAfqus_o1j_QkaYkZ_g==/109951163664241365.jpg',
           lrc: `[00:00.000] 作词 : Jon Steingard

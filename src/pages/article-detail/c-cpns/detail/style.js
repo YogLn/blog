@@ -140,6 +140,11 @@ export const DetailRight = styled.div`
   .article-menu {
     width: 100%;
   }
+  .markdown-navigation {
+    .title-level2 {
+      margin-left: 5%;
+    }
+  }
 
   @media screen and (max-width: 900px) {
     display: none;
