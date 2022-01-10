@@ -1,14 +1,11 @@
 import React, { memo, useEffect, useCallback, useState } from 'react'
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'
-import APlayer from 'aplayer'
-
+import { Input, Button, message as AMessage, Divider } from 'antd'
 import { SmileTwoTone } from '@ant-design/icons'
 import { Picker } from 'emoji-mart'
-import {
-  getMessageListAction,
-  getMusicListAction
-} from './store/actionCreators'
-import { Input, Button, message as AMessage, Divider } from 'antd'
+import { getMessageListAction } from './store/actionCreators'
+
+import Player from './cpns/player'
 import MessageTheme from '@/components/message-theme'
 import { publishMessage } from '@/service/message'
 import { MessageWrapper } from './style'
@@ -21,34 +18,15 @@ export default memo(function Message() {
   const [showPicker, setShowPicker] = useState(false)
   const dispatch = useDispatch()
   const [size, setSize] = useState(5)
-  const { messageList, musicList } = useSelector(
+  const { messageList } = useSelector(
     state => ({
-      messageList: state.getIn(['message', 'messageList']),
-      musicList: state.getIn(['message', 'musicList'])
+      messageList: state.getIn(['message', 'messageList'])
     }),
     shallowEqual
   )
-    console.log(musicList);
   useEffect(() => {
     dispatch(getMessageListAction(0, size))
-    dispatch(getMusicListAction())
   }, [dispatch, size])
-
-  useEffect(() => {
-    new APlayer({
-      container: document.querySelector('.player'),
-      mini: false,
-      autoplay: false,
-      theme: '#FADFA3',
-      loop: 'all',
-      preload: 'auto',
-      volume: 0.7,
-      mutex: true,
-      listFolded: false,
-      lrcType: 1,
-      audio: musicList
-    })
-  }, [musicList])
 
   const handleLeave = useCallback(async () => {
     try {
@@ -69,9 +47,10 @@ export default memo(function Message() {
       AMessage.info('您还没有登录，快去登录吧~')
     }
   }, [message, dispatch])
-  const loadMore = useCallback(() => {
+
+  const loadMore = () => {
     setSize(size + 10)
-  }, [setSize, size])
+  }
 
   const handleEmojiClick = (emoji, e) => {
     const newMessage = message + emoji.native
@@ -80,7 +59,7 @@ export default memo(function Message() {
 
   return (
     <MessageWrapper>
-      <div className="player"></div>
+      <Player />
       <Divider />
       <div className="message-list">
         {messageList.map(item => {

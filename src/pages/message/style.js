@@ -13,11 +13,6 @@ export const MessageWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.85);
   padding: 0px 15px 30px;
   border: 1px solid #eee;
-  .player {
-    animation: moveUp 0.7s;
-    transition: all 0.7s;
-  }
-
   .more {
     color: #4c30ff;
     text-align: center;
